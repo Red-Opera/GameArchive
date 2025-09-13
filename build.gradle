@@ -37,6 +37,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'com.googlecode.juniversalchardet:juniversalchardet:1.0.3'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
     
     
     // MySQL Driver
