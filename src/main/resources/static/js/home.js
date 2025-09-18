@@ -463,6 +463,49 @@ class GameStudioApp {
         }
     }
 
+        createLogoHoverEffect(logoElement) {
+        const logo = logoElement.querySelector('.logo-image');
+        if (!logo) return;
+
+        // Create subtle glow effect
+        const glow = document.createElement('div');
+        glow.style.cssText = `
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--clr-primary-400), var(--clr-accent-400));
+            border-radius: var(--radius-s);
+            opacity: 0;
+            z-index: -1;
+            filter: blur(4px);
+            animation: logoGlow 0.3s ease forwards;
+        `;
+
+        logoElement.style.position = 'relative';
+        logoElement.appendChild(glow);
+
+        setTimeout(() => glow.remove(), 300);
+    }
+
+    setupHeroLogoParallax(heroLogo) 
+    {
+        if (!heroLogo) 
+            return;
+
+        const updateLogoParallax = () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.1;
+            const opacity = Math.max(0.02, 0.08 - scrolled * 0.0001);
+            
+            heroLogo.style.transform = `translate(-50%, -50%) translateY(${rate}px) rotate(${scrolled * 0.02}deg)`;
+            heroLogo.style.opacity = opacity;
+        };
+
+        window.addEventListener('scroll', updateLogoParallax);
+    }
+
     // Counter animation
     animateCounter(element) {
         const target = element.textContent.match(/\d+/)?.[0];
