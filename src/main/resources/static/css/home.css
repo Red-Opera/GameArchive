@@ -1590,6 +1590,56 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Privacy Policy Page Styles */
+.privacy-policy {
+    max-width: 50rem;
+    margin: 2rem auto;
+    padding: var(--space-l);
+    background: var(--clr-surface-elevated);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-m);
+    line-height: 1.7;
+}
+
+.privacy-policy h1,
+.privacy-policy h2,
+.privacy-policy h3,
+.privacy-policy strong {
+    color: var(--clr-text-primary);
+    margin-bottom: var(--space-s);
+}
+
+.privacy-policy p {
+    color: var(--clr-text-secondary);
+    margin-bottom: var(--space-m);
+}
+
+.privacy-policy ul {
+    margin-left: var(--space-l);
+    margin-bottom: var(--space-m);
+}
+
+.privacy-policy li {
+    color: var(--clr-text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.privacy-policy a {
+    color: var(--clr-primary-500);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.privacy-policy a:hover {
+    color: var(--clr-accent-500);
+}
+
+/* Dark mode adjustments for privacy policy */
+[data-theme="dark"] .privacy-policy {
+    background: var(--clr-surface-elevated);
+    border: 1px solid var(--clr-border-primary);
+}
+
 /* Utility Classes */
 .visually-hidden {
     position: absolute;

@@ -898,6 +898,21 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
         document.body.style.opacity = '1';
     });
+
+    // Add back to home button for privacy page
+    if (window.location.pathname === '/privacy') {
+        const privacyPolicy = document.querySelector('.privacy-policy');
+        if (privacyPolicy) {
+            const backButton = document.createElement('button');
+            backButton.className = 'btn btn-outline';
+            backButton.style.marginBottom = 'var(--space-l)';
+            backButton.textContent = '← Back to Home';
+            backButton.addEventListener('click', () => {
+                window.location.href = '/';
+            });
+            privacyPolicy.insertBefore(backButton, privacyPolicy.firstChild);
+        }
+    }
 });
 
 // Performance monitoring

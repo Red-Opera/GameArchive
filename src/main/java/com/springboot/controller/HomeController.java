@@ -25,4 +25,12 @@ public class HomeController
         
         return "support";
     }
+
+    @GetMapping("/privacy")
+    public String privacy(Model model) 
+    {
+        model.addAttribute("message", "Privacy Policy");
+        
+        return "policy/PrivacyPolicy";
+    }
 }
